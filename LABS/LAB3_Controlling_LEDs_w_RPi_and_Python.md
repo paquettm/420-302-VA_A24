@@ -3,9 +3,9 @@
 Before this lab, you should have gotten an overview of programming in Python.
 Now, you will be trying to understand a bit of an existing program and modify it slightly to accomplish a related task.
 
-This lab will teach students how to control LEDs using Python GPIO on a Raspberry Pi and display a binary count of seconds from 0 to 59 and then from 0 to 8.
+This lab will teach students how to control LEDs using Python GPIO on a Raspberry Pi and display a binary count of seconds from 0 to 59 and then from 0 to 7.
 
-**Objective:** In this lab, you will learn how to control LEDs using Python on a Raspberry Pi. You will write a Python program to display a binary count of seconds from 0 to 8 using LEDs.
+**Objective:** In this lab, you will learn how to control LEDs using Python on a Raspberry Pi. You will write a Python program to display a binary count of seconds from 0 to 7 using LEDs.
 
 **Materials Needed:**
 - Raspberry Pi (any model with GPIO pins)
@@ -91,9 +91,9 @@ Your LEDs should now start displaying part of a binary count of seconds from 0 t
 
 **4. Modify the Program**
 
-We want to change this program, to understand it well. We must get a count from 0 to 8.
+We want to change this program, to understand it well. We must get a count from 0 to 7.
 
-How many LEDs do we need to display a count from 0 to 8?
+How many LEDs do we need to display a count from 0 to 7?
 What about from 0 to 10?
 
 You must now modify this program slightly, possibly:
@@ -101,11 +101,11 @@ You must now modify this program slightly, possibly:
 - modifying the conversion code, and/or
 - changing some looping parameters
 to get output only on the 3 first LEDs.
-You will be counting the seconds from 0 to 8.
+You will be counting the seconds from 0 to 7.
 
 **5. Lab Questions:**
 Observe the behavior of the LEDs.
 - What do you notice as the seconds change from 0 to 59? And 59 to 0?
-- What do you notice as the seconds change count from 0 to 8? Is the behaviour always the same? Why?
+- What do you notice as the seconds change count from 0 to 7? Is the behaviour always the same? Why?
 - How does the `format(seconds, '06b')` function work in formatting the binary representation?
 - What would you need to modify in the code if you wanted to use different GPIO pins for the LEDs?
