@@ -1,7 +1,3 @@
-*.ss~
-*.ss#*
-.#*.ss
-
-*.scm~
-*.scm#*
-.#*.scm
+# Comment lines in .gitignore files start with the # symbol
+# This file is where we list specific files or file patterns for files not to place in the online repository.
+# This file is here as an example.
