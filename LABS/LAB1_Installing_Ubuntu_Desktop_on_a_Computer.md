@@ -1,4 +1,4 @@
-# LAB 1 :  Installing Ubuntu Desktop on a Computer
+# Lab 1 :  Installing Ubuntu Desktop on a Computer
 
 ## Introduction
 

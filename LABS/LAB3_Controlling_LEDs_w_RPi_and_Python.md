@@ -1,4 +1,4 @@
-# Lab: Controlling LEDs with Raspberry Pi and Python
+# Lab 3: Controlling LEDs with Raspberry Pi and Python
 
 Before this lab, you should have gotten an overview of programming in Python.
 Now, you will be trying to understand a bit of an existing program and modify it slightly to accomplish a related task.

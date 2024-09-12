@@ -247,4 +247,4 @@ For this private repository to be visible to anyone, you must invite them as a c
 - Click on that user in the listing
 - Click **Add paquettm to this repository**
 
-The submission deadline is Thursday, September 12, before midnight.
+The submission deadline is Thursday, September 12, before midnight (end of day).
