@@ -35,7 +35,7 @@ def on_message(client, userdata, message):
    print(f"Received message on topic '{message.topic}': {message.payload.decode()}")
 
 # Create an MQTT client
-client = mqtt.Client()
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
 
 # Set up callback functions
 client.on_connect = on_connect
