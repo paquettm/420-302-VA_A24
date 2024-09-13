@@ -4,7 +4,7 @@
 You previously installed Mosquitto as a MQTT message broker and configured Mosquitto to allow remote connections in [Lab 4, Part A](LAB4A_MQTT_and_Mosquitto.md).
 
 ## Objective
-In this session, you will create Python programs to subscribe to and publish messages to the MQTT message broker running on the Raspberry Pi. Additionally, you will connect to the Raspberry Pi via SSH from your Windows or macOS command line.
+In this session, you will create Python programs to subscribe to and publish messages to the MQTT message broker running on the Raspberry Pi. Additionally, you will connect to the Raspberry Pi command line through the terminal (or via SSH from your Windows or macOS command line).
 
 ## Materials
 - Raspberry Pi 4 with Raspberry Pi OS installed and Mosquitto MQTT broker configured (as per the previous session).
@@ -50,7 +50,7 @@ client.loop_forever()
 
 3. Save the file and exit the text editor.
 
-4. Run the subscriber program on the Raspberry Pi via SSH:
+4. Run the subscriber program on the Raspberry Pi:
 ```bash
 python3 mqtt_subscriber.py
 ```
@@ -110,7 +110,7 @@ python3 mqtt_subscriber.py
 ```
 
 **Python MQTT Publisher:**
-1. On another Raspberry Pi terminal (or via SSH), create and open a Python script for publishing MQTT messages. Use the `nano` text editor or your preferred text editor.
+1. On another Raspberry Pi terminal (or via a new SSH), create and open a Python script for publishing MQTT messages. Use the `nano` text editor or your preferred text editor.
 ```bash
 nano mqtt_publisher.py
 ```
@@ -144,7 +144,17 @@ while True:
 
 3. Save the file and exit the text editor.
 
-4. Run the publisher program on the Raspberry Pi via SSH:
+4. Run the publisher program on the Raspberry Pi:
+```bash
+python3 mqtt_publisher.py
+```
+
+5. You should have gotten an error if you followed the exact steps. What is the solution? Don't follow all the steps from above, because now, the virtual environment is created and paho-mqtt is installed. You only need to activate the virtual environment with the command
+```bash
+source myenv/bin/activate
+```
+
+6. Again, try running the publisher program on the Raspberry Pi:
 ```bash
 python3 mqtt_publisher.py
 ```
