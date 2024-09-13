@@ -95,6 +95,8 @@ To enter the virtual environment, run the following command
 source myenv/bin/activate
 ```
 
+To exit the virtual environment, you can run the `deactivate` command, but we won't be needing to do this right now.
+
 Now that we are in the virtual environment, we may install the wanted library using `pip3`, as follows:
 ```bash
 pip3 install paho-mqtt
