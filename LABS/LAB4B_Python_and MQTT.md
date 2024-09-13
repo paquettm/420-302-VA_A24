@@ -24,7 +24,7 @@ import paho.mqtt.client as mqtt
 
 # Define the MQTT broker and topic
 broker_address = "localhost"  # Replace with the Raspberry Pi's IP if not running locally
-topic = "test/topic"  # Replace with the desired MQTT topic
+topic = "conveyor1/motor1/temperature"  # Replace with the desired MQTT topic
 
 # Callback functions for MQTT client
 def on_connect(client, userdata, flags, rc):
@@ -123,7 +123,7 @@ import time
 
 # Define the MQTT broker and topic
 broker_address = "localhost"  # Replace with the Raspberry Pi's IP if not running locally
-topic = "test/topic"  # Replace with the desired MQTT topic
+topic = "conveyor1/motor1/temperature"  # Replace with the desired MQTT topic
 
 while True:
    try:
@@ -158,6 +158,8 @@ source myenv/bin/activate
 ```bash
 python3 mqtt_publisher.py
 ```
+
+Compare the two terminal windows and explain what is going on.
 
 **Review Questions:**
 Update the **reflection log** that you created in your private GitHub repository, irst answering the following questions.
