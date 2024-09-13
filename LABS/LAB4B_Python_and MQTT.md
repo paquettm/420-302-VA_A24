@@ -81,9 +81,21 @@ To utilize these libraries, they must be installed as part of the configuration 
 
 In our laboratory session, we will install the `paho-mqtt` library.
 This library is essential for our tasks, enabling us to work with the MQTT protocol in Python.
-Before running the provided programs, it's crucial to install the `paho-mqtt` library using `pip`.
-Use the following command for installation:
+Before running the provided programs, it's crucial to install the `paho-mqtt` library using `pip3`.
 
+Before we can do this, however, we must create a virtual environment to avoid causing conflicts among the operating system.
+To create the virtual environment, run the following command:
+```bash
+python3 -m venv myenv
+```
+This will create a virtual environment description called `myenv` in the `myenv` folder under the current folder.
+
+To enter the virtual environment, run the following command
+```bash
+source myenv/bin/activate
+```
+
+Now that we are in the virtual environment, we may install the wanted library using `pip3`, as follows:
 ```bash
 pip3 install paho-mqtt
 ```
