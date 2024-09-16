@@ -4,7 +4,7 @@
 You previously installed Mosquitto as a MQTT message broker and configured Mosquitto to allow remote connections in [Lab 4, Part A](LAB4A_MQTT_and_Mosquitto.md).
 
 ## Objective
-In this session, you will create Python programs to subscribe to and publish messages to the MQTT message broker running on the Raspberry Pi. Additionally, you will connect to the Raspberry Pi via SSH from your Windows or macOS command line.
+In this session, you will create Python programs to subscribe to and publish messages to the MQTT message broker running on the Raspberry Pi. Additionally, you will connect to the Raspberry Pi command line through the terminal (or via SSH from your Windows or macOS command line).
 
 ## Materials
 - Raspberry Pi 4 with Raspberry Pi OS installed and Mosquitto MQTT broker configured (as per the previous session).
@@ -24,7 +24,7 @@ import paho.mqtt.client as mqtt
 
 # Define the MQTT broker and topic
 broker_address = "localhost"  # Replace with the Raspberry Pi's IP if not running locally
-topic = "test/topic"  # Replace with the desired MQTT topic
+topic = "conveyor1/motor1/temperature"  # Replace with the desired MQTT topic
 
 # Callback functions for MQTT client
 def on_connect(client, userdata, flags, rc):
@@ -35,7 +35,7 @@ def on_message(client, userdata, message):
    print(f"Received message on topic '{message.topic}': {message.payload.decode()}")
 
 # Create an MQTT client
-client = mqtt.Client()
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
 
 # Set up callback functions
 client.on_connect = on_connect
@@ -50,7 +50,7 @@ client.loop_forever()
 
 3. Save the file and exit the text editor.
 
-4. Run the subscriber program on the Raspberry Pi via SSH:
+4. Run the subscriber program on the Raspberry Pi:
 ```bash
 python3 mqtt_subscriber.py
 ```
@@ -81,17 +81,36 @@ To utilize these libraries, they must be installed as part of the configuration 
 
 In our laboratory session, we will install the `paho-mqtt` library.
 This library is essential for our tasks, enabling us to work with the MQTT protocol in Python.
-Before running the provided programs, it's crucial to install the `paho-mqtt` library using `pip`.
-Use the following command for installation:
+Before running the provided programs, it's crucial to install the `paho-mqtt` library using `pip3`.
 
+Before we can do this, however, we must create a virtual environment to avoid causing conflicts among the operating system.
+To create the virtual environment, run the following command:
+```bash
+python3 -m venv myenv
+```
+This will create a virtual environment description called `myenv` in the `myenv` folder under the current folder.
+
+To enter the virtual environment, run the following command
+```bash
+source myenv/bin/activate
+```
+
+To exit the virtual environment, you can run the `deactivate` command, but we won't be needing to do this right now.
+
+Now that we are in the virtual environment, we may install the wanted library using `pip3`, as follows:
 ```bash
 pip3 install paho-mqtt
 ```
 This will ensure that the essential MQTT functionality is made accessible for your Python programs, enabling you to interact with MQTT brokers effectively.
-With `paho-mqtt` successfully installed, the library is now available for all future Python projects on the operating system installed on your Raspberry Pi's SD card.
+With `paho-mqtt` successfully installed, the library is now available within the myenv environment, for this project folder.
+
+You should now be able to run the python program with the command
+```bash
+python3 mqtt_subscriber.py
+```
 
 **Python MQTT Publisher:**
-1. On the Raspberry Pi (via SSH), create and open a Python script for publishing MQTT messages. Use the `nano` text editor or your preferred text editor.
+1. On another Raspberry Pi terminal (or via a new SSH), create and open a Python script for publishing MQTT messages. Use the `nano` text editor or your preferred text editor.
 ```bash
 nano mqtt_publisher.py
 ```
@@ -104,7 +123,7 @@ import time
 
 # Define the MQTT broker and topic
 broker_address = "localhost"  # Replace with the Raspberry Pi's IP if not running locally
-topic = "test/topic"  # Replace with the desired MQTT topic
+topic = "conveyor1/motor1/temperature"  # Replace with the desired MQTT topic
 
 while True:
    try:
@@ -125,10 +144,22 @@ while True:
 
 3. Save the file and exit the text editor.
 
-4. Run the publisher program on the Raspberry Pi via SSH:
+4. Run the publisher program on the Raspberry Pi:
 ```bash
 python3 mqtt_publisher.py
 ```
+
+5. You should have gotten an error if you followed the exact steps. What is the solution? Don't follow all the steps from above, because now, the virtual environment is created and paho-mqtt is installed. You only need to activate the virtual environment with the command
+```bash
+source myenv/bin/activate
+```
+
+6. Again, try running the publisher program on the Raspberry Pi:
+```bash
+python3 mqtt_publisher.py
+```
+
+Compare the two terminal windows and explain what is going on.
 
 **Review Questions:**
 Update the **reflection log** that you created in your private GitHub repository, irst answering the following questions.

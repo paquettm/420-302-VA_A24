@@ -127,9 +127,15 @@ mosquitto_sub -t "conveyorbelt1/motor1/temperature"
 mosquitto_pub -t "conveyorbelt1/motor1/temperature" -m "53"
 ```
 
-5. Further experimentation
+**Exiting the Subscriber Application:**
+Notice that the subscriber application remains active in order to receive any message sent on the topic, until it gets shut down.
+Press the `CTRL-C` key combination to exit this application, when you are done.
 
-The `mosquitto_sub` and `mosquitto_pub` commands can be used to connect to and interact with MQTT message brokers that are not running locally on your device, often referred to as "remote" brokers. MQTT is designed to be a standardized protocol, so as long as the broker you're connecting to supports the MQTT protocol (which is the case for most MQTT brokers), you can use these command-line tools to publish and subscribe to topics on remote brokers.
+## Step 5: Further experimentation
+
+So far, you have connected to a Mosquitto server that is run by your own Raspberry Pi SBC.
+The `mosquitto_sub` and `mosquitto_pub` commands can also connect to and interact with MQTT message brokers that are not running locally on your device, often referred to as "remote" brokers.
+MQTT is designed to be a standardized protocol, so as long as the broker you're connecting to supports the MQTT protocol (which is the case for most MQTT brokers), you can use these command-line tools to publish and subscribe to topics on remote brokers.
 
 Here's how you can use them to connect to a remote MQTT broker:
 
