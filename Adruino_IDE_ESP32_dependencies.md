@@ -26,14 +26,14 @@ To install ESP32 dependencies on the Arduino IDE, follow these steps:
 
    f. In the Boards Manager, type "ESP32" into the search bar.
 
-   g. Click on the "ESP32 by Espressif Systems" entry and click the "Install" button.
+   g. Place your mouse pointer over the **esp32** entry by **Espressif Systems** and click its **Install** button.
 
-   h. Wait for the installation to complete.
+   h. Wait for the installation to complete. You will see the installation advancement in a progress bar.
 
 4. **Select the ESP32 Board:**
    After the installation is complete, you can select the ESP32 board you want to use. 
 
-   a. Go to "Tools" > "Board" and select the ESP32 board you have (e.g., "ESP32 Dev Module").
+   a. Go to "Tools" > "Board" and select the ESP32 board you have (e.g., **ESP32 Dev Module**).
 
 5. **Install USB Drivers (if needed):**
    Depending on your operating system, you may need to install USB drivers for the ESP32 board. Usually, these drivers are automatically installed when you connect the board to your computer via USB. However, if you encounter driver issues, consult the documentation for your specific ESP32 board for driver installation instructions.
