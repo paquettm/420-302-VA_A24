@@ -30,6 +30,7 @@
 
 2. **Hardware Connection:**
    - Connect the ESP32 board to your computer using a USB cable.
+   - Select the board "ESP32 Dev Kit" and the proper port.
 
 **Programming:**
 
@@ -69,14 +70,15 @@ void setup() {
   // Start Serial communication
   Serial.begin(115200);
 
+//this part does not work 2024-09-20 (used to)
   // Read the MAC address
-  uint8_t mac[6];
-  esp_read_mac(mac, ESP_MAC_WIFI_STA);
+//  uint8_t mac[6];
+//  esp_read_mac(mac, ESP_MAC_WIFI_STA);
   // Convert MAC address to a string
-  char macStr[18]; // MAC address is 12 characters long without separators, plus null terminator
-  snprintf(macStr, sizeof(macStr), "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+//  char macStr[18]; // MAC address is 12 characters long without separators, plus null terminator
+//  snprintf(macStr, sizeof(macStr), "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
   // Concatenate the name prefix with the MAC address 
-  name = name + macStr;
+//  name = name + macStr;
 
   // Connect to Wi-Fi
   WiFi.begin(ssid, password);
@@ -312,7 +314,7 @@ void loop() {
 **Conclusion:**
 
 9. **Completion:**
-    - Congratulations! You have successfully integrated a photocell and resistor voltage divider to measure ambient lighting and transmit the data over MQTT.
+    - You have successfully integrated a photocell and resistor voltage divider to measure ambient lighting and transmit the data over MQTT.
 
 10. **Further Exploration:**
     - Experiment with different lighting conditions and calibration settings to refine your measurements.
@@ -334,7 +336,7 @@ If you're having trouble finding the `PubSubClient.h` library in the Arduino IDE
 
 3. **Search for PubSubClient**: In the Library Manager, you can search for the `PubSubClient` library in the search bar.
 
-4. **Install PubSubClient**: Once you find the `PubSubClient` library in the list, click on the "Install" button next to it. This will download and install the library on your Raspberry Pi.
+4. **Install PubSubClient**: Once you find the `PubSubClient` library by "Nick O'Leary" in the list, click on the "Install" button next to it. This will download and install the library on your Raspberry Pi.
 
 5. **Check Installation**: After installation is complete, you should see a green checkmark next to the `PubSubClient` library in the Library Manager.
 
