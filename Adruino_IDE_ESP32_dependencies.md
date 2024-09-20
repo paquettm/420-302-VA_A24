@@ -40,6 +40,7 @@ To install ESP32 dependencies on the Arduino IDE, follow these steps:
 
 6. **Select the Port:**
    Connect your ESP32 board to your computer via USB. Then, go to "Tools" > "Port" and select the appropriate COM port or device associated with your ESP32 board.
+   On my Raspberry Pi, the port is "/dev/ttyUSB0".
 
 7. **Test with Blink Example:**
    To test if everything is set up correctly, you can upload a simple "Blink" example sketch to your ESP32 board.
@@ -47,6 +48,11 @@ To install ESP32 dependencies on the Arduino IDE, follow these steps:
    a. Go to "File" > "Examples" > "01.Basics" > "Blink."
 
    b. Compile the sketch by clicking the checkmark symbol to the top left. You should get a success message in the console below, with the statement that 
+   ```
+   Sketch uses ### bytes (##%) of program storage space. Maximum is ### bytes.
+   Global variables use ### bytes (##%) of dynamic memory, leaving ### bytes for local variables. Maximum is ### bytes.
+   ```
+   This tells us that the ESP32 microcontrollers have limited resources.
 
    c. Click the "Upload" button (right arrow icon) to compile and upload the sketch to your ESP32 board. You should see the "Hard resetting via RTS pin..." message in the console when done.
 
