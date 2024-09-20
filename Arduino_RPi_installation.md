@@ -24,15 +24,14 @@ To install the Arduino IDE on Raspberry Pi OS (formerly known as Raspbian), you 
 
 4. **Add User to the "dialout" Group:**
    To allow your user to access the serial ports (necessary for uploading code to Arduino boards), you must add your user to the "dialout" group. Replace `<username>` with your actual username in the following command:
-
    ```
    sudo usermod -a -G dialout <username>
    ```
-If you don't know your username, type the following command in the terminal:
+   If you don't know your username, type the following command in the terminal:
    ```
    whoami
    ```
-The output of the command will be your username.
+   The output of the command will be your username.
 
 5. **Launch Arduino IDE:**
    After the installation is complete, you can launch the Arduino IDE by searching for it in the application menu (maybe under the *Electronics* category) or by running the following command in the Terminal:
