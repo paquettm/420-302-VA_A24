@@ -13,9 +13,13 @@ Moreover, you will see an example of object-oriented programming (OOP) in Python
 - An I2C temperature sensor (e.g., MCP9808)
 - Jumper wires
 
+Note: You may use any other I2C-connected measuring device for this lab, but you will have to adapt the algorithms to match the measurements and conversions required.
+
 ### Step 1: Enable the I2C Interface
 
-1.1. Open a terminal on your Raspberry Pi.
+On your Raspberry Pi
+
+1.1. Open a terminal, for example by pressing the `CTRL-ALT-t` key combination in the Raspberry Pi OS GUI.
 
 1.2. Run the following command to launch the Raspberry Pi Configuration tool:
    
@@ -23,11 +27,19 @@ Moreover, you will see an example of object-oriented programming (OOP) in Python
    sudo raspi-config
    ```
 
-1.3. Navigate to "Interfacing Options" and select "I2C."
+1.3. With the arrow keys, select "Interface Options" and press `enter`.
 
-1.4. When prompted, select "Yes" to enable the I2C interface.
+1.4. With the arrow keys, select "I2C" and press `enter`.
 
-1.5. Reboot your Raspberry Pi to apply the changes.
+1.5. When prompted, use the arrow keys to select "Yes" and press `enter`. This will enable the I2C interface on your Raspberry Pi. You should see the message that `The ARM I2C interface is enabled`. Press `enter`.
+
+1.6. With the arrow keys, select "Finish" and press `enter`.
+
+1.7. Reboot your Raspberry Pi to apply the changes with the following command:
+
+   ```bash
+   sudo reboot
+   ```
 
 ### Step 2: Connect the I2C Device
 
