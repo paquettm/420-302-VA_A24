@@ -1,5 +1,9 @@
 # Lab 6: Communicating with I2C Devices on Raspberry Pi in Object-Oriented Python
 
+This lab assumes previous knowledge of [I2C](https://en.wikipedia.org/wiki/I%C2%B2C).
+
+For Raspberry Pi GPIO pinout, refer to the [following](https://cdn.sparkfun.com/assets/learn_tutorials/1/5/9/5/GPIO.png).
+
 ## Objective:
 In this lab, you will learn how to
 - enable the I2C interface on your Raspberry Pi,
@@ -46,7 +50,9 @@ On your Raspberry Pi
 2.1. **Physical Connections**:
    - Connect the SDA (Serial Data) pin of the I2C sensor to GPIO pin 2 (physical pin 3) on your Raspberry Pi.
    - Connect the SCL (Serial Clock) pin of the I2C sensor to GPIO pin 3 (physical pin 5) on your Raspberry Pi.
+   - Connect the sensor to VCC and GND (optionally from the RPi physical pins 1 for 3V3, 2 or 3 for 5V and 6, 9, 14, 20, 25, 30, 34, or 39 for Ground)
    - Ensure that your Raspberry Pi and I2C sensor share a common ground connection.
+   - Ground all address pins from the sensor (A0, A1, A2). These are used to set addresses for use of multiple units.
 
 Pins 2 and 3 (resp physical pins 3 and 5) are used as examples in this lab. If these are nto available in your setup for any reason, you may use other pins that are available for this purpose and adapt the Python3 code below to the used logical (BCM) pin numbers.
 
@@ -59,39 +65,62 @@ Test the I2C connection to verify that your Raspberry Pi can detect the I2C sens
 sudo i2cdetect -y 1
 ```
 
-This command will display a grid showing detected I2C device addresses. Ensure that your I2C sensor's address appears in the grid, indicating a successful connection.
+This command will display a grid showing detected I2C device addresses.
+Ensure that your I2C sensor's address appears in the grid, indicating a successful connection.
 If it doesn't, double-check your connections and address settings.
+
+For reference, for the device used in this lab, you should see the number `18` appear at the intersection of line 10 and column 8.
+
+Notice that the columns are numbered `0` to `9` and `a` to `f`.
+This is because the address numbers are [**hexadecimal**](https://en.wikipedia.org/wiki/Hexadecimal).
 
 ### Step 3: Install the SMBus Library
 
-3.1. Open a terminal on your Raspberry Pi.
+On your Raspberry Pi
 
-3.2 Virtual environment creation and activation
+   3.1. Open a terminal, for example by pressing `CTRL-ALT-t`.
 
-We must create a virtual environment to contain libraries, avoiding causing conflicts with other programs with conflicting definitions within the same operating system.
-To create the virtual environment, run the following command:
-```bash
-python3 -m venv myenvname
-```
-This will create a virtual environment description called `myenvname` in the `myenvname` folder under the current folder.
-You can choose another name than `myenvname`.
+   3.2. Create a new folder for this lab and enter it.
+   ```
+   mkdir lab6
+   ```
+   will create the directory and
+   ```
+   cd lab6
+   ```
+   will enter it.
 
-To enter the virtual environment, run the following command
-```bash
-source myenvname/bin/activate
-```
-...but if you chose a name that is different from `myenvname`, make sure to substitute `myenvname` for that name in the instruction above.
+   3.3. Virtual environment creation and activation
 
-3.3. Witin the virtual environment, install the `smbus` library using pip3:
+   We must create a virtual environment to contain libraries, avoiding causing conflicts with other programs with conflicting definitions within the same operating system.
+   To create the virtual environment, run the following command:
+   ```bash
+   python3 -m venv --system-site-packages i2c
+   ```
+   This will create a virtual environment description called `i2c` in the `i2c` folder under the current folder.
+   We include the `--system-site-packages` option so that all system-wide packages are also accessible within this virtual environment.
+   In other words, if a library already exists in the Raspberry Pi OS, it can be accessed in this environment.
+   This will be handy for a specific error we are likely to face in a minute.
+
+   You can choose another name than `i2c`.
+
+   To enter the virtual environment, run the following command
+   ```bash
+   source i2c/bin/activate
+   ```
+   ...but if you chose a name that is different from `i2c`, make sure to substitute `i2c` for that name in the instruction above.
+
+   3.4. With the the virtual environment activated, install the `smbus` library using `pip3`. This library can be used, in Python, to communicate with I2C devices:
 
    ```bash
    sudo pip3 install smbus
    ```
-
-   This library can be used, in Python, to communicate with I2C devices.
+   
+   BUT... If you get an error message stating that the library is externally managed, this means that the library was already installed system-wide.
+   That is fine because we have included the `--system-site-packages` option in our virvual environment creation instruction.
 
 ### Step 4: Write Python Code to Read Temperature
-
++
 4.1. Create a Python script (e.g., `temperature_sensor.py`) using your preferred text editor. You can use the `nano` text editor:
 
    ```bash
@@ -245,3 +274,4 @@ Using 2 objects, get readings from 2 sensors on the i2c bus and proceed as above
 
 ## Reflection log
 Update your reflection log to include everything that you observed and learned in this lab.
+Pay special attention to the ideas related to Object-Oriented Programming.
