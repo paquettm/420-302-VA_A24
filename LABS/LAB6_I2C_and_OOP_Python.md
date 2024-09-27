@@ -4,6 +4,7 @@ This lab assumes previous knowledge of [I2C](https://en.wikipedia.org/wiki/I%C2%
 
 For Raspberry Pi GPIO pinout, refer to the [following](https://cdn.sparkfun.com/assets/learn_tutorials/1/5/9/5/GPIO.png).
 
+
 ## Objective:
 In this lab, you will learn how to
 - enable the I2C interface on your Raspberry Pi,
@@ -128,7 +129,10 @@ On your Raspberry Pi
    ```
 
 4.2. The following Python3 program looks a bit different from the programs we worked with previously: it is object-oriented.
-In particular, in this pogram, we define `class TemperatureSensor`, which is a blueprint for the `TemperatureSensor` type of `object`.
+
+What does object-oriented mean? Before we continue, take 5 minutes to [watch this video](https://www.youtube.com/watch?v=X3cFiJnxUBY).
+
+In our own code, as below, we define `class TemperatureSensor`, which is a blueprint for the `TemperatureSensor` type of `object`.
 
 In class definitions, we write what the instances, or objects of that class will have as `properties` and `methods`.
 Properties are the variables that each object will have to store data. Methods are the actions that objects can apply, if called.
