@@ -1,4 +1,4 @@
-# Project Statement: Learning Integration Assessment - Raspberry Pi and Arduino-based IoT System**
+# Project Statement: Learning Integration Assessment - Raspberry Pi and Arduino-based IoT System
 
 ![Schematic](images/IoT_System.png "Schematic")
 
