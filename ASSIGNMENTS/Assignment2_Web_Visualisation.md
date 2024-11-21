@@ -36,7 +36,7 @@ This is already implemented, but you must complete the configuration to fulfill 
     - Connects to the MQTT broker on the Raspberry Pi using the `PubSubClient.h` library
     - Reads an analog value, for example,
         - the voltage from a potentiometer or photocell connected as a voltage divider to the pin 34 on the ESP32 or
-        - the value sampled by an I2C device (SDA and SCL normally on GPIO pins 21 and 22, respectively).
+        - the value sampled by an I2C device (SDA and SCL normally on GPIO pins 21 and 22, respectively). See the [EXAMPLES folder](../EXAMPLES)
     - Publishes the value to the topic name that identifies the variable you wish to measure in your project, at an interval relevant to the control of the targeted process. For example, if your projected system must measure aquarium water temperature, publishing to "aquarium/temperature" once per minute could be reasonable.
 
 ### Task 3: The Actor
