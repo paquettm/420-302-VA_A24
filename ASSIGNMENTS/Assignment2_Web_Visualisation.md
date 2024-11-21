@@ -56,7 +56,7 @@ This program will record all messages to the historian_data.db SQLite3 database.
 
 ### Task 5: The Web Visualisation
 
-You will follow the procedure from Lab 8 (coming soon) to implement and run the Visualisation Web interface.
+You will follow the procedure from [Lab 8](../LABS/LAB8_Web_Historian_Visualisation.md) to implement and run the Visualisation Web interface.
 
 ## Testing
 
