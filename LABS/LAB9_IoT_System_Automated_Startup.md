@@ -246,3 +246,20 @@ To check the status of your service:
 ```bash
 sudo systemctl status IoT_Web.service
 ```
+
+## TROUBLESHOOTING
+
+You will have a problem with the Web service: The `matplotlib` package will not be found. It was certainly installed differently from all other packages.
+
+To solve this, we will install this package as a system-wide package as follows:
+
+```
+sudo apt-get install python3-matplotlib
+```
+
+And then run
+```
+sudo systemctl restart IoT_Web.service
+```
+
+Does it work now?
