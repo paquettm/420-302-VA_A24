@@ -6,9 +6,11 @@ By the end of this assignment, you will be able to:
 
 - Create a GitHub account and set up your profile
 - Create a new repository on GitHub and add some files
-- Clone the repository to your local machine using Git
-- Modify the code on your local machine and commit the changes
+- Clone the repository to your local computer using Git
+- Modify the code on your local computer and commit the changes
 - Push the changes back to GitHub and view them online
+
+---
 
 ## Instructions
 
@@ -67,7 +69,7 @@ This is done from GitHub or any other source by using the Git utility.
 Git is a version control system that lets you track changes to your files and collaborate with others.
 
 **To clone the repository using Git, you must:**
-- Have Git installed on your computer. If not, install Git on your machine. You can download it from [https://git-scm.com/downloads](https://git-scm.com/downloads) and follow the instructions for your operating system. For Raspberry Pi OS, follow the instructions from [https://github.com/paquettm/raspberry-pi-OS-setup/blob/main/github/README.md](https://github.com/paquettm/raspberry-pi-OS-setup/blob/main/github/README.md).
+- Have Git installed on your computer. If not, install Git on your computer. You can download it from [https://git-scm.com/downloads](https://git-scm.com/downloads) and follow the instructions for your operating system. For Raspberry Pi OS, follow the instructions from [https://github.com/paquettm/raspberry-pi-OS-setup/blob/main/github/README.md](https://github.com/paquettm/raspberry-pi-OS-setup/blob/main/github/README.md).
 - Open a terminal such as Command Prompt on Windows. (Click Start, type "cmd", click on "Command Prompt") and navigate to the folder where you want to store your local copy of the repository with OS instructions. For example, in Windows, type the following commands at the command prompt to go to your user profile home folder:
 ```bash
 c:
